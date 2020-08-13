@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+    <meta name="viewport" content="width=device-wiendth, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>result</title>
+</head>
+
+<body>
+<h2 align="center">Set Unlocking Transaction Parameters on ORChain</h2>
+<div align="center">
+    <form action="/set_param_tool" method="post">
+        <table align="center">
+            <tr>
+                <td align="left">
+                    <label>ORChain Wallet Path</label>
+                </td>
+                <td align="left">
+                    <input type="text" id="wallet" name="wallet" placeholder="{{.wallet}}"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>ORChain Wallet Password</label>
+                </td>
+                <td align="left">
+                    <input type="password" id="opwd" name="opwd" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Parameter Version: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="ver" name="ver" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Fee Rate: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="fr" name="fr" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Min Change: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="mc" name="mc" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Signatures: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="sigs" name="sigs" placeholder="sep by ','"/>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" class="submit" value="Sign"/>
+    </form>
+</div>
+
+<div align="center">
+    <p>
+        <span style="color: red; ">{{.data}}</span>
+    </p>
+</div>
+
+</body>
+</html>

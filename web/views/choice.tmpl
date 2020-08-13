@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+    <meta name="viewport" content="width=device-wiendth, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>welcome using vendor tool to start your cross-chain business</title>
+    <style type="text/css">
+        .submit1 {
+            border: 0;
+            padding: 20px 40px;
+            background-color: #00acc1;
+            font-size: 20px;
+            border-radius: 3px;
+            outline: 0;
+            color: #ffffff;
+        }
+        .submit2 {
+            border: 0;
+            padding: 20px 40px;
+            background-color: #ff8f00;
+            font-size: 20px;
+            border-radius: 3px;
+            outline: 0;
+            color: black;
+        }
+        .submit3 {
+            border: 0;
+            width: 500px;
+            height: 40px;
+            background-color: darkmagenta;
+            font-size: 15px;
+            border-radius: 3px;
+            outline: 0;
+            color: white;
+        }
+        .yesno {
+            font-size: 25px;
+            color: #30167f;
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center">{{ .title }}</h1>
+<div align="center">
+    <form id="1" action="/before_init" method="post" >
+        <table align="center">
+            <tr align="left">
+                <td><label class="yesno">YES: </label></td>
+                <td>
+                    <input type="submit" class="submit1" value="Start to be a vendor"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br>
+    <br>
+    <form id="2" action="/start_vendor_tool" method="post" >
+        <table align="center">
+            <tr align="left">
+                <td><label class="yesno">NO: </label></td>
+                <td>
+                    <input type="submit" class="submit2" value="Just start vendor tool"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br>
+    <br>
+    <h2 align="center">Functions</h2>
+    <table align="center">
+        <tr>
+            <td align="center">
+                <form id="func1" action="/func_signcontract" method="post" >
+                    <input type="submit" class="submit3" value="Sign Contract and Redeem"/>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <form id="func2" action="/func_updatecontract" method="post" >
+                    <input type="submit" class="submit3" value="Update BTC Contract Address on Target Chain"/>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <form id="func3" action="/func_signparam" method="post" >
+                    <input type="submit" class="submit3" value="Sign Parameters for BTC Unlocking Transaction"/>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <form id="func4" action="/func_updateparam" method="post" >
+                    <input type="submit" class="submit3" value="Set Unlocking Transaction Parameters on ORChain"/>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
