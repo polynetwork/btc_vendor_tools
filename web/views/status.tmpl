@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>vendor tool status</title>
+</head>
+
+<body>
+<div align="center">
+    <h1>Contracts and Parameters</h1>
+    <table>
+        <tr>
+            <td>Contract: </td>
+            <td> {{ .contract }} </td>
+        </tr>
+        <tr>
+            <td>Contract Version: </td>
+            <td>{{.ver}} </td>
+        </tr>
+        <tr>
+            <td>Min Change: </td>
+            <td>{{.mc}} </td>
+        </tr>
+        <tr>
+            <td>Fee Rate: </td>
+            <td>{{.fr}} </td>
+        </tr>
+        <tr>
+            <td>Parameter Version: </td>
+            <td>{{.pver}}</td>
+        </tr>
+    </table>
+</div>
+
+<div align="center">
+    <h1>UTXOS</h1>
+    <table>
+        <tr>
+            <td>Sum: </td>
+            <td>{{.sum}}</td>
+        </tr>
+        <tr>
+            <td>Total: </td>
+            <td>{{.total}}</td>
+        </tr>
+    </table>
+</div>
+
+<div align="center">
+    <h1>Transaction Signed</h1>
+</div>
+
+<div align="center">
+    <h1>see your log for now, more function to add in the future</h1>
+</div>
+</body>
+</html>

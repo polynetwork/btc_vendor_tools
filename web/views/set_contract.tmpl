@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+    <meta name="viewport" content="width=device-wiendth, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>result</title>
+</head>
+
+<body>
+<h2 align="center">Set Contract Representing BTC on Target Chain</h2>
+<div align="center">
+    <form action="/set_contract_tool" method="post">
+        <table align="center">
+            <tr>
+                <td align="left">
+                    <label>ORChain Wallet Path</label>
+                </td>
+                <td align="left">
+                    <input type="text" id="wallet" name="wallet" placeholder="{{.wallet}}"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>ORChain Wallet Password</label>
+                </td>
+                <td align="left">
+                    <input type="password" id="opwd" name="opwd" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Target Contract Address: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="contract" name="contract" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Contract Version: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="ver" name="ver" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Target Chain ID: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="chainid" name="chainid" placeholder=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label>Signatures: </label>
+                </td>
+                <td align="left">
+                    <input type="text" id="sigs" name="sigs" placeholder="sep by ','"/>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" class="submit" value="Send"/>
+    </form>
+</div>
+
+<div align="center">
+    <p>
+        <span style="color: red; ">{{.data}}</span>
+    </p>
+</div>
+
+</body>
+</html>

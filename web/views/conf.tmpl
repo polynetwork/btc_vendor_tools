@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        .submit {
+            border: 0;
+            padding: 8px 16px;
+            background-color: #cfd8dc;
+            font-size: 14px;
+            border-radius: 3px;
+            outline: 0;
+        }
+        .input{
+            width: 700px;
+            height: 30px;
+        }
+    </style>
+    <title>check configuration</title>
+</head>
+<body>
+<h1 align="center">
+    {{.title}}
+</h1>
+<div align="center">
+    <form action="/status" method="post">
+        <table align="center">
+            <tr align="left">
+                <td>
+                    <label>ORChain RPC Address:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="rpc" name="rpc" placeholder="{{.rpc}}" type="text"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>ORChain Wallet File:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="owallet" name="owallet" placeholder="{{.owallet}}" type="text"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>ORChain Wallet Password:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="opwd" name="opwd" placeholder="{{.opwd}}" type="password"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>Encrypted BTC Private Key File:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="bwallet" name="bwallet" placeholder="{{.bwallet}}" type="text"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>Password of Encrypted BTC Private Key:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="bpwd" name="bpwd" placeholder="{{.bpwd}}" type="password"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>Bitcoin Net Type:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="nt" name="nt" placeholder="{{.nt}}" type="text"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>Listen ORChain Duration:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="wait_time" name="wait_time" placeholder="{{.wait_time}}" type="text"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>Db Path:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="db" name="db" placeholder="{{.db}}" type="text"/>
+                </td>
+            </tr>
+
+            <tr align="left">
+                <td>
+                    <label>Vendor's Multisig Redeem Script:</label>
+                </td>
+                <td class="input">
+                    <input class="input" id="redeem" name="redeem" placeholder="{{.redeem}}" type="text"/>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" class="submit" value="Confirm"/>
+    </form>
+</div>
+
+<div align="center">
+    <p>
+        <span style="color: red; ">{{.data}}</span>
+    </p>
+</div>
+
+</body>
+
+</html>

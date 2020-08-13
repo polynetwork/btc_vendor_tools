@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        .card {
+            position: relative;
+            margin-bottom: 24px;
+            background-color: #fff;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+        .step-progress {
+            padding: 16px;
+            background-color: #fafafa;
+            margin: 0 auto;
+        }
+        .step-progress .step-slider {
+            width: 100%;
+        }
+        .step-progress .step-slider .step-slider-item {
+            width: 12.5%;
+            height: 1px;
+            position: relative;
+            float: left;
+            background-color: #e0e0e0;
+        }
+        .step-progress .step-slider .step-slider-item:after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: -6px;
+            right: 0;
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease-out 0.5s;
+            -webkit-transition: all 0.3s ease-out 0.5s;
+        }
+        .step-progress .step-slider .step-slider-item:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: #b0bec5;
+            z-index: 1;
+            -webkit-transition: all 0.5s ease-out;
+        }
+        .step-progress .step-slider .step-slider-item.active:before {
+            width: 100%;
+            background-color: #ff8f00;
+        }
+        .step-progress .step-slider .step-slider-item.active:after {
+            border-color: #ff8f00;
+        }
+        .step-content {
+            padding: 16px 0;
+        }
+        .step-content .step-content-foot {
+            text-align: right;
+        }
+        .step-content .step-content-foot button {
+            border: 0;
+            padding: 8px 16px;
+            background-color: #cfd8dc;
+            font-size: 14px;
+            border-radius: 3px;
+            outline: 0;
+        }
+        .step-content .step-content-foot button:active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .step-content .step-content-foot button.out {
+            display: none;
+        }
+        .step-content .step-content-foot button.disable {
+            background-color: #eceff1;
+        }
+        .step-content .step-content-foot button.active {
+            background-color: #00acc1;
+            color: white;
+        }
+        .step-content .step-content-body {
+            padding: 16px 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        .step-content .step-content-body.out {
+            display: none;
+        }
+        .submit {
+            border: 0;
+            padding: 8px 16px;
+            background-color: #cfd8dc;
+            font-size: 14px;
+            border-radius: 3px;
+            outline: 0;
+        }
+    </style>
+    <title>vendor tool</title>
+</head>
+
+<body>
+<h1 align="center">Vendor Tool</h1>
+<script type="text/javascript" src="https://wow.techbrood.com/libs/jquery/jquery-2.1.1.min.js"></script>
+<div class="card step-progress">
+    <div class="step-slider">
+        <div data-id="step1" class="step-slider-item"></div>
+        <div data-id="step2" class="step-slider-item"></div>
+        <div data-id="step3" class="step-slider-item"></div>
+        <div data-id="step4" class="step-slider-item"></div>
+        <div data-id="step5" class="step-slider-item"></div>
+        <div data-id="step6" class="step-slider-item"></div>
+        <div data-id="step7" class="step-slider-item"></div>
+        <div data-id="step8" class="step-slider-item"></div>
+    </div>
+    <div class="step-content">
+        <div id="step1" class="step-content-body">
+            <h2 align="center">Step 1: Generate Private Key</h2>
+            <form action="/geneprivk" method="post" >
+                <table align="center">
+                    <tr>
+                        <td align="left">
+                            <label>Password to Encrypt Private Key: </label>
+                        </td>
+                        <td align="left">
+                            <input type="password" id="pwd" name="pwd" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Password Confirmation: </label>
+                        </td>
+                        <td align="left">
+                            <input type="password" id="pwd2" name="pwd2" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Encrypted Private Key File Path: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="path" name="path" placeholder=""/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit" value="Generate"/>
+            </form>
+        </div>
+
+        <div id="step2" class="step-content-body out">
+            <h2 align="center">Step 2: Generate MultiSig Wallet</h2>
+            <form action="/generdm" method="post">
+                <table align="center">
+                    <tr>
+                        <td align="left">
+                            <label>Public Keys: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="pubks" name="pubks" placeholder="sep by ','"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Require Sig Number: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="req" name="req" placeholder="require sig number for multisig"/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit" value="Generate"/>
+            </form>
+        </div>
+
+        <div id="step3" class="step-content-body out">
+            <h2 align="center">Step 3: Deploy Smart Contract</h2>
+            <p>
+                for example ethereum:
+                balabala
+            </p>
+        </div>
+
+        <div id="step4" class="step-content-body out">
+            <h2 align="center">Step 4: Sign MultiSig Script and Contract Address by Your BTC Private Key</h2>
+            <form action="/sign_contract" method="post">
+                <table align="center">
+                    <tr>
+                        <td align="left">
+                            <label>Encrypted Private Key File: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="privk_file" name="privk_file" placeholder="your btc encrypted
+                            private key file"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Password to Encrypt Private Key: </label>
+                        </td>
+                        <td align="left">
+                            <input type="password" id="pwd" name="pwd" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Target Contract Address: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="contract" name="contract" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Contract Version: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="ver" name="ver" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Target Chain ID: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="chainid" name="chainid" placeholder=""/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit" value="Sign"/>
+            </form>
+        </div>
+
+        <div id="step5" class="step-content-body out">
+            <h2 align="center">Step 5: Set Contract Representing BTC on Target Chain</h2>
+            <form action="/set_contract" method="post">
+                <table align="center">
+                    <tr>
+                        <td align="left">
+                            <label>Target Contract Address: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="contract" name="contract" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Contract Version: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="ver" name="ver" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Target Chain ID: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="chainid" name="chainid" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Signatures: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="sigs" name="sigs" placeholder="sep by ','"/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit" value="Send"/>
+            </form>
+        </div>
+
+        <div id="step6" class="step-content-body out">
+            <h2 align="center">Step 6: Sign Parameters for BTC Unlocking Transaction</h2>
+            <form action="/sign_param" method="post">
+                <table align="center">
+                    <tr>
+                        <td align="left">
+                            <label>Encrypted Private Key File: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="privk_file" name="privk_file" placeholder="your btc encrypted
+                            private key file"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Password to Encrypt Private Key: </label>
+                        </td>
+                        <td align="left">
+                            <input type="password" id="pwd" name="pwd" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Parameter Version: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="ver" name="ver" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Fee Rate: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="fr" name="fr" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Min Change: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="mc" name="mc" placeholder=""/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit" value="Sign"/>
+            </form>
+        </div>
+
+        <div id="step7" class="step-content-body out">
+            <h2 align="center">Step 7: Set Unlocking Transaction Parameters on ORChain</h2>
+            <form action="/set_param" method="post">
+                <table align="center">
+                    <tr>
+                        <td align="left">
+                            <label>Parameter Version: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="ver" name="ver" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Fee Rate: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="fr" name="fr" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Min Change: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="mc" name="mc" placeholder=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <label>Signatures: </label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="sigs" name="sigs" placeholder="sep by ','"/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="submit" value="Send"/>
+            </form>
+        </div>
+
+        <div id="step8" class="step-content-body out">
+            <h2 align="center">Step 8: Start Vendor Signing Tool</h2>
+            <form action="/status" method="post">
+                <input type="submit" class="submit" value="Start Vendor Tool"/>
+            </form>
+        </div>
+
+        <div class="step-content-foot">
+            <button type="button" class="active" name="prev">Prev</button>
+            <button type="button" class="active" name="next">Next</button>
+            {{/*<button type="button" class="active out" name="finish">Finish</button>*/}}
+        </div>
+    </div>
+</div>
+
+<div align="center">
+    <p>
+        <span style="color: red; ">{{.data}}</span>
+    </p>
+</div>
+
+<script>
+    $(function() {
+        var step = 0;
+        var stepItem = $('.step-progress .step-slider .step-slider-item');
+
+        // Step Next
+        $('.step-content .step-content-foot button[name="next"]').on('click', function() {
+            var instance = $(this);
+            if (stepItem.length - 1 < step) {
+                return;
+            }
+            // if (step == (stepItem.length - 2)) {
+            //     instance.addClass('out');
+            //     // instance.siblings('button[name="finish"]').removeClass('out');
+            // }
+            $(stepItem[step]).addClass('active');
+            $('.step-content-body').addClass('out');
+            $('#' + stepItem[step + 1].dataset.id).removeClass('out');
+            step++;
+        });
+
+        // Step Last
+        // $('.step-content .step-content-foot button[name="finish"]').on('click', function() {
+        //     if (step == stepItem.length) {
+        //         return;
+        //     }
+        //     $(stepItem[stepItem.length - 1]).addClass('active');
+        //     $('.step-content-body').addClass('out');
+        //     $('#stepLast').removeClass('out');
+        // });
+
+        // Step Previous
+        $('.step-content .step-content-foot button[name="prev"]').on('click', function() {
+            var instance = $(this);
+            $(stepItem[step]).removeClass('active');
+            // if (step == (stepItem.length - 1)) {
+            //     instance.siblings('button[name="next"]').removeClass('out');
+            //     // instance.siblings('button[name="finish"]').addClass('out');
+            // }
+            $('.step-content-body').addClass('out');
+            $('#' + stepItem[step].dataset.id).removeClass('out');
+            if (step <= 0) {
+                return;
+            }
+            step--;
+        });
+    });
+</script>
+</body>
+
+</html>
