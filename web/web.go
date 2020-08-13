@@ -18,10 +18,10 @@ package web
 
 import (
 	"github.com/polynetwork/poly-go-sdk"
-	"github.com/polynetwork/vendortool/config"
-	"github.com/polynetwork/vendortool/db"
-	"github.com/polynetwork/vendortool/log"
-	"github.com/polynetwork/vendortool/web/router"
+	"github.com/polynetwork/btc-vendor-tools/config"
+	"github.com/polynetwork/btc-vendor-tools/db"
+	"github.com/polynetwork/btc-vendor-tools/log"
+	"github.com/polynetwork/btc-vendor-tools/web/router"
 )
 
 func StartWeb(conf *config.Config, poly *poly_go_sdk.PolySdk, vdb *db.VendorDB, done chan struct{}) error {

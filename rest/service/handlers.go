@@ -19,12 +19,12 @@ package service
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/polynetwork/vendortool/log"
-	"github.com/polynetwork/vendortool/rest/http/common"
-	"github.com/polynetwork/vendortool/rest/http/restful"
-	"github.com/polynetwork/vendortool/rest/utils"
-	"github.com/polynetwork/vendortool/signer"
-	locutil "github.com/polynetwork/vendortool/utils"
+	"github.com/polynetwork/btc-vendor-tools/log"
+	"github.com/polynetwork/btc-vendor-tools/rest/http/common"
+	"github.com/polynetwork/btc-vendor-tools/rest/http/restful"
+	"github.com/polynetwork/btc-vendor-tools/rest/utils"
+	"github.com/polynetwork/btc-vendor-tools/signer"
+	locutil "github.com/polynetwork/btc-vendor-tools/utils"
 )
 
 type Service struct {

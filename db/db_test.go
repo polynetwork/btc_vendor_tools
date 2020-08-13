@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/polynetwork/vendortool/utils"
+	"github.com/polynetwork/btc-vendor-tools/utils"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"

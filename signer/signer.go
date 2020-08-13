@@ -24,10 +24,10 @@ import (
 	"github.com/ontio/ontology-crypto/ec"
 	sdk "github.com/polynetwork/poly-go-sdk"
 	"github.com/polynetwork/poly-go-sdk/client"
-	"github.com/polynetwork/vendortool/config"
-	"github.com/polynetwork/vendortool/db"
-	"github.com/polynetwork/vendortool/log"
-	"github.com/polynetwork/vendortool/utils"
+	"github.com/polynetwork/btc-vendor-tools/config"
+	"github.com/polynetwork/btc-vendor-tools/db"
+	"github.com/polynetwork/btc-vendor-tools/log"
+	"github.com/polynetwork/btc-vendor-tools/utils"
 	"time"
 )
 

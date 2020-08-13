@@ -31,9 +31,9 @@ import (
 	"github.com/polynetwork/poly/common"
 	"github.com/polynetwork/poly/core/types"
 	"github.com/polynetwork/poly/native/service/utils"
-	"github.com/polynetwork/vendortool/config"
-	"github.com/polynetwork/vendortool/db"
-	utils2 "github.com/polynetwork/vendortool/utils"
+	"github.com/polynetwork/btc-vendor-tools/config"
+	"github.com/polynetwork/btc-vendor-tools/db"
+	utils2 "github.com/polynetwork/btc-vendor-tools/utils"
 	"strconv"
 	"strings"
 )

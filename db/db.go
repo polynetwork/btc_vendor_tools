@@ -20,7 +20,7 @@ import (
 	"bytes"
 	"container/list"
 	"encoding/binary"
-	"github.com/polynetwork/vendortool/utils"
+	"github.com/polynetwork/btc-vendor-tools/utils"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/util"
 	"sort"

@@ -1,4 +1,4 @@
-module github.com/polynetwork/vendortool
+module github.com/polynetwork/btc-vendor-tools
 
 go 1.14
 

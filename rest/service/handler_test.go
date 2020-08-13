@@ -21,11 +21,11 @@ import (
 	"encoding/hex"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/polynetwork/vendortool/config"
-	"github.com/polynetwork/vendortool/observer"
-	"github.com/polynetwork/vendortool/rest/http/restful"
-	"github.com/polynetwork/vendortool/signer"
-	"github.com/polynetwork/vendortool/utils"
+	"github.com/polynetwork/btc-vendor-tools/config"
+	"github.com/polynetwork/btc-vendor-tools/observer"
+	"github.com/polynetwork/btc-vendor-tools/rest/http/restful"
+	"github.com/polynetwork/btc-vendor-tools/signer"
+	"github.com/polynetwork/btc-vendor-tools/utils"
 	"testing"
 )
 
@@ -37,7 +37,7 @@ var (
 func TestService_SignTx(t *testing.T) {
 	config.BtcNetParam = &chaincfg.TestNet3Params
 	rb, _ := hex.DecodeString(redeem)
-	sgr, err := signer.NewSigner("/Users/zou/go/src/github.com/ontio/vendortool/privk",
+	sgr, err := signer.NewSigner("/Users/zou/go/src/github.com/ontio/btc-vendor-tools/privk",
 		nil, nil, nil, rb)
 	if err != nil {
 		t.Fatal(err)
