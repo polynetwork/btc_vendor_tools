@@ -19,7 +19,7 @@ package utils
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/polynetwork/vendortool/rest/http/common"
+	"github.com/polynetwork/btc-vendor-tools/rest/http/common"
 )
 
 func ParseParams(req interface{}, params map[string]interface{}) error {
@@ -50,7 +50,7 @@ func RefactorResp(resp *common.Response, errCode uint32) (map[string]interface{}
 
 //// only for cross chain
 //func EstimateSerializedTxSize(inputCount int, txOuts []*wire.TxOut) int {
-//	multi5of7InputSize := 32 + 4 + 1 + 4 + vendortool.RedeemP2SH5of7MultisigSigScriptSize
+//	multi5of7InputSize := 32 + 4 + 1 + 4 + btc-vendor-tools.RedeemP2SH5of7MultisigSigScriptSize
 //
 //	outsSize := 0
 //	for _, txOut := range txOuts {
@@ -58,5 +58,5 @@ func RefactorResp(resp *common.Response, errCode uint32) (map[string]interface{}
 //	}
 //
 //	return 10 + wire.VarIntSerializeSize(uint64(inputCount)) + wire.VarIntSerializeSize(uint64(len(txOuts)+1)) +
-//		inputCount*multi5of7InputSize + vendortool.MaxP2SHScriptSize + outsSize
+//		inputCount*multi5of7InputSize + btc-vendor-tools.MaxP2SHScriptSize + outsSize
 //}

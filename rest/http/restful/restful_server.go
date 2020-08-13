@@ -27,8 +27,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/polynetwork/vendortool/log"
-	"github.com/polynetwork/vendortool/rest/http/common"
+	"github.com/polynetwork/btc-vendor-tools/log"
+	"github.com/polynetwork/btc-vendor-tools/rest/http/common"
 )
 
 type ApiServer interface {

@@ -19,10 +19,10 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/polynetwork/poly-go-sdk"
-	"github.com/polynetwork/vendortool/config"
-	"github.com/polynetwork/vendortool/db"
-	"github.com/polynetwork/vendortool/web/controller"
-	"github.com/polynetwork/vendortool/web/service"
+	"github.com/polynetwork/btc-vendor-tools/config"
+	"github.com/polynetwork/btc-vendor-tools/db"
+	"github.com/polynetwork/btc-vendor-tools/web/controller"
+	"github.com/polynetwork/btc-vendor-tools/web/service"
 	"net/http"
 )
 
